@@ -1,0 +1,8 @@
+{
+  "libraries": [
+    "@/slices"
+  ],
+  "_latest": "0.0.43",
+  "apiEndpoint": "https://prismic-atomix-starter.cdn.prismic.io/api/v2",
+  "storybook": "http://localhost:8888"
+}

@@ -1,0 +1,153 @@
+@use "sass:map";
+
+@import "~include-media/dist/include-media";
+@import '../../styles/common';
+
+.footer {
+  background-color: $primary;
+
+  &__columns {
+    padding: rem(50) 0;
+    display: block;
+
+    @include media(">=sm") {
+      display: grid;
+    }
+
+    @include media(">=md") {
+      padding: rem(60) 0;
+    }
+
+    @include media(">=lg") {
+      padding: rem(60) 0;
+    }
+  }
+
+  
+  &__column-default,
+  &__column-social,
+  &__column-contact {
+    @include unreset-list;
+    flex: 1;
+
+    a, p {
+      margin: 0;
+      color: rgba($white, 0.6);
+      line-height: rem(22);
+      font-size: rem(12);
+      
+      @include media(">=lg") {
+        line-height: rem(30);
+        font-size: rem(14);
+      }
+    }
+    
+    a {
+      color: rgba($white, 0.6);
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-lightblue;
+        transition: color $link-transition-time;
+      }
+    }
+  }
+
+
+  &__column-contact {
+    display: inline-block;
+
+    &__logo {
+      margin-bottom: rem(18);
+
+      svg {
+        width: rem(120);
+        height: auto;
+      }
+    }
+
+    &__address {
+      margin: 0 0 rem(14) 0;
+    }
+
+    &__link {
+      margin-top: rem(26);
+
+      a {
+        color: white;
+        font-size: rem(15);
+        font-weight: 300;
+      }
+    }
+  }
+
+
+  &__column-social {
+    margin-top: rem(65);
+
+    &__icons {
+      color: white;
+
+      svg {
+        width: auto;
+        height: rem(20);
+        padding-right: rem(28);
+        cursor: pointer;
+        color: white;
+
+        @include media(">=xs") {
+          padding-right: rem(18);
+        }
+
+        &:hover {
+          color: $primary-lightblue;
+          transition: color $link-transition-time;
+        }
+      }
+    }
+  }
+
+
+  &__column-default {
+    display: none;
+
+    @include media(">=md") {
+      display: inline-block;
+    }
+
+    &__heading {
+      color: white;
+      width: 60%;
+      background-image: linear-gradient(to right, white 5%, rgba($black, 0) 20%);
+      background-position: bottom;
+      background-size: 5px 1px;
+      background-repeat: repeat-x;
+      margin: 0;
+      font-size: rem(14);
+    }
+  
+    &__content {
+      margin-top: rem(20);
+    }
+  }
+
+  &__copyright {
+    text-align: left;
+    padding-bottom: rem(60);
+    padding-top: rem(20);
+    margin: auto;
+    display: block;
+
+    @include media(">=lg") {
+      padding-top: 0;
+      padding-bottom: rem(90);
+    }
+
+    p {
+      letter-spacing: 0;
+      color: rgba($white, 0.4);
+      line-height: 100%;
+      font-size: rem(11);
+    }    
+  }
+}

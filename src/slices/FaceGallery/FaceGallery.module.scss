@@ -1,0 +1,57 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/common';
+
+.facegallery {
+  margin: rem(10) rem(20);
+
+  @include media(">=md") {
+    margin: rem(10) rem(80);
+  }
+
+  @include media(">=xl") {
+    margin: rem(10) rem(120);
+  }
+
+  &__heading {
+    font-size: rem(30);
+    margin: auto;
+
+    @include media(">=md") {
+      font-size: rem(70);
+      max-width: none;
+    }
+
+    @include media(">=lg") {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    margin-bottom: rem(16);
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: rem(10);
+    grid-template-columns: minmax(auto, rem(246));
+    justify-content: space-evenly;
+    margin-top: rem(40);
+    padding: rem(30) 0;
+
+    @include media(">=md") {
+      margin-top: #{rem(240)};
+      padding-top: #{rem(100)};
+    }
+
+    @include media(">=md", "<lg") {
+      grid-template-columns: repeat(2, rem(387));
+    }
+
+    @include media(">=lg", "<xl") {
+      grid-template-columns: repeat(3, rem(387));
+    }
+
+    @include media(">=xl") {
+      grid-template-columns: repeat(4, rem(320));
+    }
+  }
+}

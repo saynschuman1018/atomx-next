@@ -1,0 +1,47 @@
+@import "~include-media/dist/include-media";
+@import '../../../styles/common';
+
+.mainPath {
+  fill: none;
+  opacity: 0.700;
+  stroke: #ff6274;
+  stroke-miterlimit: 10;
+  stroke-width: 4;
+  visibility: hidden;
+}
+
+.svgViewport {
+  left: -#{rem(20)};
+  position: absolute;
+  z-index: -1;
+  min-width: calc(100vw + #{rem(20)});
+  width: 140vw;
+
+  @include media(">=md") {
+    left: -#{rem(40)};
+    min-width: calc(100vw + #{rem(40)});
+    width: auto;
+  }
+
+  @include media(">=lg") {
+    left: -#{rem(80)};
+    min-width: calc(100vw + #{rem(80)});
+  }
+}
+
+.randomizeButton {
+  background-color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.svgPoint {
+  fill: orange;
+}
+
+.bubbleAnimatable {
+  transform: scale(0.01);
+  transition: ease-out 0.4s transform;
+}

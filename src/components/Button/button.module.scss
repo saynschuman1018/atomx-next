@@ -1,0 +1,68 @@
+@import '../../styles/colors';
+@import '../../styles/functions';
+
+.button {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: rem(22);
+  line-height: rem(28);
+  font-weight: 400;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    white-space: nowrap;
+
+    &:hover {
+      path {
+        animation: hoverColor 0.5s linear forwards;
+      }
+    }
+  }
+
+  &--primary-inverse {
+    color: $white;
+  }
+
+  &__icon {
+    margin-left: rem(15);
+    margin-top: rem(8);
+    height: rem(14);
+    width: rem(14);
+
+    path {
+      fill: $brand-pink;
+      stroke: $brand-pink;
+    }
+
+    &--minus {
+      path:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__underline {
+    margin-top: 0.3rem;
+    
+    path {
+      fill: $brand-pink;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+  }
+}
+
+@keyframes hoverColor {
+  100% {
+    fill: $brand-blue;
+  } 
+}

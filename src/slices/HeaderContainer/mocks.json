@@ -1,0 +1,15 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "description": "Navigation",
+    "links": [
+      { "label": "Link 1 | Google", "href": "https://www.google.com" },
+      { "label": "Apple", "href": "https://www.apple.com" },
+      { "label": "Yahoo", "href": "https://www.yahoo.com" }
+    ],
+    "alt": "Logo Here",
+    "slice_type": "navigation"
+  }
+]

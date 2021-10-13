@@ -1,0 +1,21 @@
+@import "~include-media/dist/include-media";
+@import '../../../styles/common';
+
+.footer-bcorp-logo {
+  width: rem(12);
+  height: auto;
+  margin-top: rem(30);
+  
+  &--small {
+    width: rem(2.5rem);
+    float: right;
+    margin-top: -70px;
+  }
+
+  @include media(">=sm") {
+    width: rem(150);
+  }
+  @include media(">=lg") {
+    width: rem(170);
+  }
+}

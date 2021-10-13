@@ -1,0 +1,823 @@
+{
+  "links": [],
+  "lists": [],
+  "component": "two_col_collapsable",
+  "custom_lists": [
+    {
+      "tag": "ul",
+      "_uid": "b63d166b-a367-413d-b103-277f88ed3a1d",
+      "color": "green",
+      "content": [
+        {
+          "_uid": "b4b9c958-7019-4841-9ab3-21edbd03adfe",
+          "text": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "ABC",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          "component": "basic_richtext"
+        },
+        {
+          "_uid": "b75e13e4-10b2-4257-9cca-39bda8b06c9c",
+          "text": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "BCD",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          "component": "basic_richtext"
+        },
+        {
+          "_uid": "4e4c7715-b7d3-4938-9cf8-71a25d8deffa",
+          "text": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "DEF",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "component": "basic_richtext"
+        }
+      ],
+      "iconCode": "butterfly",
+      "component": "custom_list"
+    },
+    {
+      "tag": "ul",
+      "_uid": "194a443d-c82e-43a9-8430-a0c2f022e544",
+      "color": "green",
+      "content": [],
+      "iconCode": "butterfly",
+      "component": "custom_list"
+    }
+  ],
+  "left_col_title": "Let's Get To Business",
+  "right_col_list": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "bullet_list",
+        "content": [
+          {
+            "type": "list_item",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "business",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list_item",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "websites",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list_item",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "good",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "see_more_button": [
+    {
+      "url": {
+        "id": "",
+        "url": "",
+        "linktype": "story",
+        "fieldtype": "multilink",
+        "cached_url": ""
+      },
+      "_uid": "5ece85f6-7a30-43f8-ab0b-1dcdb7c86323",
+      "label": "See less",
+      "variant": [
+        "primary"
+      ],
+      "component": "basic_button"
+    }
+  ],
+  "right_col_link_1": {
+    "id": "",
+    "url": "https://www.google.com",
+    "linktype": "url",
+    "fieldtype": "multilink",
+    "cached_url": "https://www.google.com"
+  },
+  "right_col_link_2": {
+    "id": "",
+    "url": "https://www.google.com",
+    "linktype": "url",
+    "fieldtype": "multilink",
+    "cached_url": "https://www.google.com"
+  },
+  "right_col_link_3": {
+    "id": "6caf69d5-a609-4957-98f3-b41dc3a85c79",
+    "url": "",
+    "linktype": "story",
+    "fieldtype": "multilink",
+    "cached_url": "settings"
+  },
+  "right_col_link_4": {
+    "id": "048874de-c57c-4fc0-a50e-25993d119695",
+    "url": "",
+    "linktype": "story",
+    "fieldtype": "multilink",
+    "cached_url": "about"
+  },
+  "unrevealed_height": "40",
+  "left_col_paragraph": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "It’s always a challenge to easily sum up in a small sentence what our team does. ",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Yes, we can build ",
+            "type": "text"
+          },
+          {
+            "text": "websites",
+            "type": "text",
+            "marks": [
+              {
+                "type": "underline"
+              }
+            ]
+          },
+          {
+            "text": ", create “",
+            "type": "text"
+          },
+          {
+            "text": "experiences",
+            "type": "text",
+            "marks": [
+              {
+                "type": "underline"
+              }
+            ]
+          },
+          {
+            "text": "” for both online and offline, we’ve even got a long history in ",
+            "type": "text"
+          },
+          {
+            "text": "digital marketing",
+            "type": "text",
+            "marks": [
+              {
+                "type": "underline"
+              }
+            ]
+          },
+          {
+            "text": " and ",
+            "type": "text"
+          },
+          {
+            "text": "SEO",
+            "type": "text",
+            "marks": [
+              {
+                "type": "underline"
+              }
+            ]
+          },
+          {
+            "text": ", but it’s more than that…",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Since starting out in 2008, we have made it our mission to continually evolve and seek out the best way to build websites / digital solutions and understand what users really want and answer the question, “what really works?.”",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "From this continuous desire to understand, we continually ask ourselves, “why?,” “who?” and “how can we make things better?” With atomix you are sure to have a partner who cares about the big questions.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Over the years, we have kept that tireless enquiry to seek out the best solutions, but funnily enough our success has come from learning how to better understand and define problems - ",
+            "type": "text"
+          },
+          {
+            "text": "check out this article about design thinking",
+            "type": "text",
+            "marks": [
+              {
+                "type": "underline"
+              }
+            ]
+          },
+          {
+            "text": ".",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "We don’t just want to build you the site right, we want to build you the right site. So what is it you really need help with? What’s your biggest challenge?",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The answer may or may not be a new website.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "We can take your project from start to finish, or can consult across the entire digital lifecycle to help your business or organisation with your next digital project.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "right_col_paragraph": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "blok",
+        "attrs": {
+          "id": "7e33b5bc-5022-4338-9363-821668269b3a",
+          "body": [
+            {
+              "tag": "ul",
+              "_uid": "i-029665d1-a297-4402-b155-610d638fa5d3",
+              "color": "purple",
+              "content": [
+                {
+                  "_uid": "a59ec949-1afd-49f6-9d66-43c211c038ea",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "bold"
+                              },
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "large_font"
+                                }
+                              }
+                            ],
+                            "text": "Strategy & Innovation"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "lightbulb",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "e3a00551-95f1-48e8-b9e2-b42b17eba229",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "bold"
+                              },
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "large_font"
+                                }
+                              }
+                            ],
+                            "text": "User Experience & design"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "hand",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "f9b3f400-bcd4-42c4-8edc-76ce612b907b",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "bold"
+                              },
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "large_font"
+                                }
+                              }
+                            ],
+                            "text": "Web design & digital platforms"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "brush",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "f9e9c244-3116-4779-a9c8-27a6b2e11e2e",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "link",
+                                "attrs": {
+                                  "href": "/fcp-test",
+                                  "uuid": "83e56b5e-3547-40ed-b2d6-e1f1a039cf4a",
+                                  "linktype": "story",
+                                  "target": "_blank",
+                                  "anchor": null
+                                }
+                              },
+                              {
+                                "type": "bold"
+                              },
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "large_font"
+                                }
+                              }
+                            ],
+                            "text": "Service design & training"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": true,
+                  "iconCode": "cog",
+                  "component": "custom_list_item"
+                }
+              ],
+              "component": "custom_list",
+              "isIconBlob": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Who we like to collaborate with"
+          }
+        ]
+      },
+      {
+        "type": "blok",
+        "attrs": {
+          "id": "0f8aaa3b-a2ba-418a-832a-a87d2356e7e6",
+          "body": [
+            {
+              "tag": "ul",
+              "_uid": "i-a28e3f2f-870a-4284-a9a6-e0d6ab2772cb",
+              "color": "green",
+              "content": [
+                {
+                  "_uid": "d58aa889-9196-41ac-bbe7-bde43c24acb7",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Government",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "spiral",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "3f986372-bf01-4809-bd8e-491ab9dd0b09",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Professional service",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "butterfly",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "7702cc3f-9d50-498b-a44b-e825aa765996",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "E-Commerce & B2C",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "pizza",
+                  "component": "custom_list_item"
+                }
+              ],
+              "component": "custom_list",
+              "isIconBlob": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Challenges we love to solve"
+          }
+        ]
+      },
+      {
+        "type": "blok",
+        "attrs": {
+          "id": "b441771f-ff9b-4ff5-9133-a210ca601943",
+          "body": [
+            {
+              "tag": "ul",
+              "_uid": "i-b0080afd-010f-4a9e-82cf-f2cf2ef0a6aa",
+              "color": "orange",
+              "content": [
+                {
+                  "_uid": "aef07e7c-20a3-4b0b-8407-ce4e817780b9",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "How can we improve our user experience?",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "spiral",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "760ccf09-61cd-4f2d-b1cd-3c11bc71bbc5",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Should we re-build our website?",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "butterfly",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "ce3a44e2-dd21-43ba-b834-c22655e01d9b",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "Service design and capability building",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "pizza",
+                  "component": "custom_list_item"
+                }
+              ],
+              "component": "custom_list",
+              "isIconBlob": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Questions you might be asking?"
+          }
+        ]
+      },
+      {
+        "type": "blok",
+        "attrs": {
+          "id": "b441771f-ff9b-4ff5-9133-a210ca601943",
+          "body": [
+            {
+              "tag": "ul",
+              "_uid": "i-5e714e79-baec-4d2f-930f-e72f47f8c245",
+              "color": "purple",
+              "content": [
+                {
+                  "_uid": "27949a68-a69b-4ebf-b2a1-7bc32e4bf45b",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "What size projects do you normally work on?",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "spiral",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "70f70585-e076-41e3-b347-42be97b9279e",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "How long do your projects normally take?",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "butterfly",
+                  "component": "custom_list_item"
+                },
+                {
+                  "_uid": "45929e16-b052-4c1e-bd62-408d730b19ec",
+                  "text": {
+                    "type": "doc",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "text": "What is human centred design?",
+                            "type": "text",
+                            "marks": [
+                              {
+                                "type": "styled",
+                                "attrs": {
+                                  "class": "small_font"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "isLink": false,
+                  "iconCode": "pizza",
+                  "component": "custom_list_item"
+                }
+              ],
+              "component": "custom_list",
+              "isIconBlob": false
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "right_col_link_title_1": "Stategy & Innovation",
+  "right_col_link_title_2": "User experience & design",
+  "right_col_link_title_3": "Web design & digital platforms",
+  "right_col_link_title_4": "Service design & training"
+}

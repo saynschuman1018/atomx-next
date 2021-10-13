@@ -1,0 +1,18 @@
+@import "~include-media/dist/include-media";
+@import '../../../../styles/common';
+
+.constrained {
+  @include media(">=md") {
+    max-width: #{10 / 12 * 100%};
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include media(">=lg") {
+    max-width: #{9 / 12 * 100%};
+  }
+
+  @include media(">=xl") {
+    max-width: #{8 / 12 * 100%};
+  }
+}

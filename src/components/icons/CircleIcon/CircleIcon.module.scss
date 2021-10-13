@@ -1,0 +1,13 @@
+@import "../../../styles/functions";
+
+.icon {
+  position: absolute;
+  font-size: rem(18);
+  color: #9ED974;
+  transform: rotateY(-180deg);
+  width: rem(18);
+
+  &__bg {
+    width: rem(52);
+  }
+}

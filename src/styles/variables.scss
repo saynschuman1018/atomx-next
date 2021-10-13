@@ -1,0 +1,49 @@
+$phi: 1.618;
+$baseline: 10;
+$container-padding: ($baseline * 2px) ((100% - 100 / $phi) / 4);
+
+// Font families
+$toolTipFont: 'NanumPen', sans-serif;
+$headerFont: 'HKNova', sans-serif;
+$formInputFont: 'HKNova', sans-serif;
+$bodyFont: 'Quicksand', sans-serif;
+
+// Font weights
+$regular: 400;
+$bold: 700;
+
+// Font sizes
+$default-body-font-size: 16px;
+$base-font-sizes: (
+  xs: 16px,
+  md: 16px,
+  lg: 16px,
+);
+
+// Links
+$link-transition-time: 500ms;
+
+// Include media sizing 
+$breakpoints: (
+  xxs: 320px,
+  xs: 460px,
+  sm: 640px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1440px,
+  xxxl: 1920px
+);
+
+$grid-breakpoints: $breakpoints;
+
+$container-gutter-width: 40px;
+$grid-gutter-width: 40px;
+
+$container-max-width: (
+  xs: calc(100% - #{$container-gutter-width}),
+  sm: calc(100% - #{$container-gutter-width}),
+  md: calc(100% - #{$container-gutter-width}),
+  lg: 1200px - $container-gutter-width,
+  xl: 1340px - $container-gutter-width,
+);

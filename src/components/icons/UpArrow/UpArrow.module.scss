@@ -1,0 +1,19 @@
+@import "../../../styles/functions";
+@import "../../../styles/colors";
+
+.icon {
+  width: rem(30);
+  position: absolute;
+  right: rem(20);
+  top: rem(5);
+
+  // TODO: if these styles are uniform inside the icon, they should perhaps
+  // be declared on the top-level element (.icon), so they can easily be overridden.
+  &__container {
+    opacity:0.5;
+  }
+
+  &__path {
+    fill: $light-green;
+  }
+}

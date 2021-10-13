@@ -1,0 +1,99 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "unicorn/no-null": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "unicorn/no-null": "off"
+      }
+    },
+    {
+      "files": ["src/utils/propTypes.ts"],
+      "rules": {
+        "unicorn/no-null": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "src/components/RichTextRenderer/reactRichTextResolver.ts",
+    "src/components/RichTextRenderer/resolver/blocks.ts",
+    "src/components/RichTextRenderer/resolver/mark.ts",
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "indent": ["error", 2],
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "single"],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-spacing": ["warn", "always"],
+    "padded-blocks": ["error", "never"],
+    "padding-line-between-statements": ["error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "block-like" },
+      { "blankLine": "always", "prev": "*", "next": ["const", "let", "var"] },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+    ],
+    "unicorn/filename-case": ["error", {
+      "cases": {
+        "camelCase": true,
+        "pascalCase": true
+      }
+    }],
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-array-reduce": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "varsIgnorePattern": "^_",
+      "argsIgnorePattern": "^_|returns|type|of",
+      "ignoreRestSiblings": true
+    }],
+    "@typescript-eslint/member-delimiter-style": ["warn", {
+      "multiline": {
+        "delimiter": "none"
+      }
+    }],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}

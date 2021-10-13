@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ include "next-public-website.fullname" . }}
+  {{- if .Values.gitlab.enabled }}
+  annotations:
+    {{- include "next-public-website.gitlab-annotations" . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "next-public-website.labels" . | nindent 4 }}
+spec:
+  gateways:
+    - {{ include "next-public-website.fullname" . }}
+  hosts:
+    - {{ .Values.ingress.host | quote }}
+  http:
+    - match:
+        - uri:
+            prefix: "/"
+      route:
+        - destination:
+            host: {{ include "next-public-website.fullname" . }}
+            port:
+              number: {{ .Values.service.port }}

@@ -1,0 +1,10 @@
+{
+  "heading": {
+    "type": "paragraph",
+    "content": [{ "text" : "This is where it all begins..."}]
+  },
+  "content": {
+    "type": "paragraph",
+    "content": [{ "text" : "Article slice mock." }]
+  }
+}

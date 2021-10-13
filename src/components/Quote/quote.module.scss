@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+.quote_text {
+    p {
+        @include chunky-underline(#FFF5AC, true, 25%, 10%);
+        display: inline;
+        font-weight: bold;
+        font-size: 1.25rem;
+
+        &::before {
+            content: '“';
+        }
+        &::after {
+            content: '”';
+        }
+    }
+}
+
+

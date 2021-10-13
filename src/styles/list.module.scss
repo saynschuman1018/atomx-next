@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.bullet-list {
+  list-style-type: none;
+
+  &__item {
+    line-height: rem($baseline * 2);
+    padding-top: rem($baseline * 2);
+  }
+
+  &__item--underlined {
+    border-bottom: 1px solid #333;
+  }
+}

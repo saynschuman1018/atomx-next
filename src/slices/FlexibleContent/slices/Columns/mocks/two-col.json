@@ -1,0 +1,138 @@
+{
+  "content": [
+    {
+      "body": {
+        "plugin": "wysiwyg-tinymce",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Lorem ipsum dolor sit amet",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ]
+              },
+              {
+                "text": ", consectetur adipiscing elit. Praesent lacinia purus ac fringilla ultrices. In lectus neque, posuere quis condimentum et, suscipit sit amet ligula. ",
+                "type": "text"
+              },
+              {
+                "text": "Vivamus nunc sem",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "italic"
+                  }
+                ]
+              },
+              {
+                "text": ", vehicula sed sapien vitae, placerat mollis eros. Suspendisse consequat mauris ac tincidunt venenatis. Praesent metus felis, semper eu lacus ut, sagittis blandit lorem.  a ",
+                "type": "text"
+              },
+              {
+                "text": "accumsaPhasellusn nulla",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "strike"
+                  }
+                ]
+              },
+              {
+                "text": ". Sed fermentum, est a efficitur tristique, odio libero vehicula tortor, id tristique magna dui vitae nisi. Ut ut lectus consectetur, ",
+                "type": "text"
+              },
+              {
+                "text": "sodales sem eu, aliquam massa",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "underline"
+                  }
+                ]
+              },
+              {
+                "text": ".",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "component": "column"
+    },
+    {
+      "body": {
+        "plugin": "wysiwyg-tinymce",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Lorem ipsum dolor sit amet",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ]
+              },
+              {
+                "text": ", consectetur adipiscing elit. Praesent lacinia purus ac fringilla ultrices. In lectus neque, posuere quis condimentum et, suscipit sit amet ligula. ",
+                "type": "text"
+              },
+              {
+                "text": "Vivamus nunc sem",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "italic"
+                  }
+                ]
+              },
+              {
+                "text": ", vehicula sed sapien vitae, placerat mollis eros. Suspendisse consequat mauris ac tincidunt venenatis. Praesent metus felis, semper eu lacus ut, sagittis blandit lorem.  a ",
+                "type": "text"
+              },
+              {
+                "text": "accumsaPhasellusn nulla",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "strike"
+                  }
+                ]
+              },
+              {
+                "text": ". Sed fermentum, est a efficitur tristique, odio libero vehicula tortor, id tristique magna dui vitae nisi. Ut ut lectus consectetur, ",
+                "type": "text"
+              },
+              {
+                "text": "sodales sem eu, aliquam massa",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "underline"
+                  }
+                ]
+              },
+              {
+                "text": ".",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "component": "column"
+    }
+  ],
+  "component": "columns",
+  "extra_gap": false,
+  "constrained": false,
+  "align_vertical": false
+}

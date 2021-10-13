@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "next-public-website.fullname" . }}
+  {{- if .Values.gitlab.enabled }}
+  annotations:
+    {{- include "next-public-website.gitlab-annotations" . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "next-public-website.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  selector:
+    matchLabels:
+      {{- include "next-public-website.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- if .Values.gitlab.enabled }}
+      annotations:
+        {{- include "next-public-website.gitlab-annotations" . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "next-public-website.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: {{ include "next-public-website.fullname" . }}-nginx
+        {{- if .Values.auth.enabled }}
+        - name: htpasswd
+          emptyDir: {}
+        {{- end }}
+      {{- if .Values.auth.enabled }}
+      initContainers:
+        - name: htpasswd
+          image: nginx:1.19-alpine
+          command: ["sh", "-c", "apk add --no-cache apache2-utils; htpasswd -bc /tmp/htpasswd/.htpasswd {{ .Values.auth.username }} {{ .Values.auth.password }}"]
+          volumeMounts:
+            - mountPath: /tmp/htpasswd
+              name: htpasswd
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}-nginx
+          image: nginx:1.19-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http-ingress
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d/
+              name: nginx-conf
+              readOnly: true
+            {{- if .Values.auth.enabled }}
+            - name: htpasswd
+              mountPath: /etc/nginx/htpasswd
+              readOnly: true
+            {{- end }}
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http-next
+              containerPort: 3000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

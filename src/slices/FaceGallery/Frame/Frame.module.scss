@@ -1,0 +1,64 @@
+@import "~include-media/dist/include-media";
+@import '../../../styles/common';
+@import '../../../styles/animations';
+
+.facegallery-frame {
+  margin: rem(5);
+  position: relative;
+
+  @include media(">=md", "<lg") {
+    &:not(:nth-child(2n)) {
+      transform: translateY(-#{rem(240)});
+    }
+  }
+
+  @include media(">=lg", "<xl") {
+    &:not(:nth-child(3n+2)) {
+      transform: translateY(-#{rem(240)});
+    }
+  }
+
+  @include media(">=xl") {
+    &:not(:nth-child(2n)) {
+      transform: translateY(-#{rem(240)});
+    }
+  }
+
+  &__image {
+    background-color: $secondary-grey;
+    padding-top: 100%;
+    position: relative;
+    height: rem(180);
+
+    @include media(">=md") {
+      height: rem(240);
+    }
+  }
+
+  &__mask {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform: scale(1.01);
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: rem(20);
+    line-height: rem(50);
+    margin: 0 0 rem(20) 0;
+
+    @include media(">=md") {
+      font-size: rem(28);
+    }
+  }
+
+  &__content * {
+    font-size: rem(15);
+
+    @include media(">=md") {
+      font-size: rem(20);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import './colors';
+@import './mixins';
+
+@mixin background-shimmer {
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: backgroundShimmer;
+  animation-timing-function: linear;
+  background: $secondary-grey;
+  background: linear-gradient(to right, $secondary-grey 10%, darken($primary, 3) 40%, $secondary-grey 100%);
+  background-size: 1000px 100%;
+}
+
+@keyframes backgroundShimmer{
+  0%{
+      background-position: -1000px 0
+  }
+  100%{
+      background-position: 1000px 0
+  }
+}

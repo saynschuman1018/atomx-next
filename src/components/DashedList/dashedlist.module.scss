@@ -1,0 +1,12 @@
+.dashed_ul {
+    padding-left: 1.45rem;
+    margin: 0;
+    background-image: url('../../../public/images/Dashed_List_Border.svg');
+    background-repeat: repeat-y;
+    list-style: none;
+
+    li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}

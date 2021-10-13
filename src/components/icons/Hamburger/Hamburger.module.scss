@@ -1,0 +1,14 @@
+@import "~include-media/dist/include-media";
+@import '../../../styles/variables';
+@import "../../../styles/functions";
+
+.icon {
+  width: rem(42);
+  position: absolute;
+  right: rem(-5);
+  top: rem(-5);
+
+  @include media('>=md') {
+    width: rem(60);
+  }
+}

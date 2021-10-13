@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+@import '../../styles/colors';
+@import '../../styles/animations';
+@import '../../styles/mixins';
+
+.curvey-hero {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: rem($baseline * 6);
+  margin-top: rem($baseline * 2);
+  position: relative;
+
+  &__overlay {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: scale(1.05);
+    width: 100%;
+    z-index: -1;
+
+    &-path {
+      fill: $white;
+    }
+  }
+
+  &__cover {
+    @include background-shimmer;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    position: absolute;
+    top: calc(-50% + #{rem($baseline * 1)});
+    transition: 0.19s transform linear;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__heading {
+    color: $primary;
+    font-size: 150%;
+    line-height: rem($baseline * 6);
+    margin-bottom: rem($baseline * 2);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &__content {
+    background-color: rgba(255,255,255,0.7);
+    line-height: rem($baseline * 3);
+    margin: 0 calc(#{(100% - 100 / $phi) / 2} - #{rem($baseline * 2)});
+    padding: rem($baseline * 1);
+    width: calc(100% + #{rem($baseline * 2)});
+  }
+}

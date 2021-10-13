@@ -1,0 +1,102 @@
+{
+    "_uid": "0643c115-fcc7-4db9-ad3f-e7c00e7cdc51",
+    "posts": [
+        {
+        "name": "Example post",
+        "content": {
+            "body": [
+            {
+                "_uid": "6d799deb-7208-4479-9d96-864be8374a0f",
+                "image": {
+                "alt": "",
+                "filename": "https://a.storyblok.com/f/105336/589x393/2c97b97764/192c51ae54b11a87a19afaeb3794deef-min.png"
+                },
+                "component": "featured_image"
+            },
+            {
+                "component": "post_category",
+                "category_name": "Blog"
+            }
+            ]
+        },
+        "slug": "example-post"
+        },
+        {
+            "name": "Example post",
+            "content": {
+                "body": [
+                {
+                    "_uid": "6d799deb-7208-4479-9d96-864be8374a0f",
+                    "image": {
+                    "alt": "",
+                    "filename": "https://a.storyblok.com/f/105336/589x393/2c97b97764/192c51ae54b11a87a19afaeb3794deef-min.png"
+                    },
+                    "component": "featured_image"
+                },
+                {
+                    "component": "post_category",
+                    "category_name": "Blog"
+                }
+                ]
+            },
+            "slug": "example-post"
+        },
+        {
+            "name": "About",
+            "content": {
+                "body": [
+                {
+                    "image": {
+                    "alt": "",
+                    "filename": "https://a.storyblok.com/f/105336/819x547/1e0613de18/image-477-min.png"
+                    },
+                    "component": "featured_image"
+                },
+                {
+                    "component": "post_category",
+                    "category_name": "Insight"
+                }
+                ]
+            }
+        },
+        {
+            "name": "Example post",
+            "content": {
+                "body": [
+                {
+                    "_uid": "6d799deb-7208-4479-9d96-864be8374a0f",
+                    "image": {
+                    "alt": "",
+                    "filename": "https://a.storyblok.com/f/105336/589x393/2c97b97764/192c51ae54b11a87a19afaeb3794deef-min.png"
+                    },
+                    "component": "featured_image"
+                },
+                {
+                    "component": "post_category",
+                    "category_name": "Blog"
+                }
+                ]
+            },
+            "slug": "example-post"
+        },
+        {
+            "name": "About",
+            "content": {
+                "body": [
+                {
+                    "image": {
+                    "alt": "",
+                    "filename": "https://a.storyblok.com/f/105336/819x547/1e0613de18/image-477-min.png"
+                    },
+                    "component": "featured_image"
+                },
+                {
+                    "component": "post_category",
+                    "category_name": "Insight"
+                }
+                ]
+            }
+        }
+    ],
+    "component": "featured_posts"
+}

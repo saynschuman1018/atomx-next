@@ -1,0 +1,35 @@
+@import '../../styles/mixins';
+
+.carousel {
+
+  &__slide {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+  }
+
+  &__dot {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      height: 1rem;
+      width: 1rem;
+      border-radius: rem(8);
+      margin-left: 0.2rem;
+      background-color: #FF6274;
+      border: none;
+
+      &:disabled {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .slide__content {
+    //Should this be named carousel__slide__content and be nested inside the slide, since it is a child of the __slide?
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

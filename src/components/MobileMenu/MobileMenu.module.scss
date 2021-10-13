@@ -1,0 +1,94 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/variables';
+@import "../../styles/colors";
+@import "../../styles/functions";
+
+.mobile-menu {
+  position: absolute; // Should change to fixed when Mobile menu is being completed
+  top: 0;
+  left: 0;
+  background-image: url('./images/jungle-office-mobile-menu.png');
+  background-repeat: no-repeat;
+  background-color: $primary;
+  background-position: bottom center;
+  // background-size: 150%;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+
+  &__active {
+    background-size: contain;
+  }
+
+  &__nav {
+    background: $primary;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &--menu {
+      color: $white;
+      list-style: none;
+      font-size: rem(20);
+      line-height: rem(50);
+      margin-bottom: rem(20);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &--link {
+        color: $white;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out;
+
+        &:hover {
+          color: $primary-lightblue;
+        }
+      }
+    }
+
+    &--contact {
+      &--text {
+        position: relative;
+        transform: rotate(10deg);
+        margin-left: rem(-64);
+        font-family: $toolTipFont;
+        
+        span {
+          color: rgba($white, 0.6);
+          width: rem(60);
+          display: block;
+        }
+      }
+
+      &--link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+.nav {
+  &__toggle {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    position: relative;
+
+    @include media('>=lg') {
+      display: none;
+    }
+  }
+}

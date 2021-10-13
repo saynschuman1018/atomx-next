@@ -1,0 +1,65 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/common';
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &-item {
+    flex: 1 1 rem(0); // This is an IE11 related bug, otherwise I'd not use rem(0) I'd just use 0
+    padding-left: rem($grid-gutter-width / 2);
+    padding-right: rem($grid-gutter-width / 2);
+
+    @each $breakpoint, $px in $breakpoints {
+      @include media(">=#{$breakpoint}") {
+        @for $i from 1 through 12 {
+          &--#{$breakpoint}-#{$i} {
+            max-width: #{($i / 12) * 100%};
+            width: #{($i / 12) * 100%};
+            flex-basis: #{($i / 12) * 100%};
+          }
+        }
+      }
+    }
+  }
+
+  &-row {
+    margin-left: rem($grid-gutter-width / 2 * -1);
+    margin-right: rem($grid-gutter-width / 2 * -1);
+    width: calc(100% + #{rem($grid-gutter-width)});
+    max-width: calc(100% + #{rem($grid-gutter-width)});
+  }
+
+  &-container {
+    margin-left: auto;
+    margin-right: auto;
+
+    @each $breakpoint, $width in $container-max-width {
+      @include media(">=#{$breakpoint}") {
+        max-width: rem($width);
+      }
+    }
+
+    &--fluid {
+      margin-left: $container-gutter-width / 2;
+      margin-right: $container-gutter-width / 2;
+      max-width: 100%;
+    }
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--without-margin {
+    &:not(.grid-item) {
+      max-width: 100%;
+    }
+  }
+
+  &--vertical {
+    align-items: center;
+  }
+}

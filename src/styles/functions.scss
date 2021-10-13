@@ -1,0 +1,58 @@
+@import './variables';
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($size) {
+  @if type-of($size) != number {
+    @return $size;
+  }
+
+  @if not unitless($size) {
+    @if unit($size) == 'px' {
+      $size: strip-unit($size);
+    } @else { // Don't try anything if there is a unit and that unit isn't px
+      @return $size;
+    }
+  }
+
+  @return #{$size / 16}rem;
+}
+
+$transition-speeds: (
+  very-fast: 0.1s,
+  fast: 0.1s,
+  medium: 0.15s,
+  slow: 0.25s,
+  very-slow: 0.35s,
+);
+
+@function transition($speed, $properties...) {
+  $declarations: ();
+
+  @each $declaration in $properties {
+    $duration: medium;
+    $delay: false;
+    $timing-function: ease;
+    $property: all;
+
+    @if type-of($declaration) == 'map' {
+      $duration: if(
+        map_get($declaration, 'duration'),
+        #{map_get($declaration, 'duration')},
+        $duration
+      );
+      $delay: if(map_get($declaration, 'delay'), #{map_get($declaration, 'delay')}, $delay);
+      $timing-function: if(map_get($declaration, 'timing-function'), #{map_get($declaration, 'timing-function')}, $timing-function);
+      $property: if(map_get($declaration, 'property'), #{map_get($declaration, 'property')}, $property);
+    } @else {
+      $property: $declaration;
+    }
+
+    $delayValue: if($delay, ' ' + $delay, '');
+    $declarations: append($declarations, #{$property + ' ' + if(map-has-key($transition-speeds, $duration), map-get($transition-speeds, $duration), $duration) + $delayValue + ' ' + $timing-function}, comma);
+  }
+
+  @return $declarations;
+}

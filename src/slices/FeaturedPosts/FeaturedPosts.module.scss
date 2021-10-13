@@ -1,0 +1,203 @@
+@import "~include-media/dist/include-media";
+@import 'src/styles/functions';
+@import 'src/styles/colors';
+
+$posts: (1: 100%, 2: 150%, 3: 230%, 4: 305%, 5: 385%, 6: 460%);
+
+.featured-posts {
+  margin-top: rem(300);
+  
+  @include media("<=md") {
+    max-width: 100%;
+    margin-top: rem(100);
+  }
+
+  .featured-posts-mosiac {
+    display: none;
+
+    @include media(">=md") {
+      display: flex;
+    }
+  }
+
+  &__stagger-posts {
+    &--down {
+      margin-top: rem(75);
+    }
+
+    &--up {
+      margin-top: rem(-75);
+    }
+  }
+
+  &__post {
+    cursor: pointer;
+    padding: 0 rem(75) 0 rem(75);
+
+    h4 {
+      font-family: $bodyFont;
+      font-size: rem(12);
+      font-weight: 600;
+      color: $secondary-lightgrey;
+      margin-bottom: rem(20);
+      margin-top: rem(20);
+    }
+
+    h3 {
+      font-family: $bodyFont;
+      font-size: rem(22);
+    }
+
+    li {
+      list-style: none;
+
+      & > div {
+        border-radius: 10px;
+      }
+    }
+
+    &-image {
+      & > div {
+        border-radius: 10px;
+      }
+    }
+
+    &--placeholder > div {
+      width: rem(200);
+    }
+  }
+
+  .featured-posts__post {
+    &--hidden {
+      display: none;
+    }
+
+    &-above {
+      & > div {
+        z-index: 1;
+      }
+
+      .featured-posts__load-more {
+        margin-top: rem(100);
+      }
+    }
+
+    &-below {
+      margin-bottom: rem(50);
+
+      .featured-posts__load-more {
+        margin-top: rem(160);
+      }
+    }
+  }
+
+  &__post {
+    flex-direction: column;
+
+    @include media (">=md") {
+      flex-basis: 50%;
+    }
+  }
+
+  .featured-posts__slider {
+    @include media(">=md") {
+      display: none;
+    }
+
+    .featured-posts__post {
+      padding: 0 rem(25) 0 rem(25);
+    }
+
+    &-wrapper {
+      height: rem(450);
+      width: 100vw;
+
+      // Loops through array, assigning container width according to number of posts
+      // Creates zoomed out appearance where adjacent posts can be seen in mobile slider
+      @each $post, $width in $posts {
+        .posts-#{$post} {
+          ul {
+            // Override inline styles from carousel package
+            width: $width !important;
+            @if $post == 1 {
+              li {
+                & > div {
+                  margin-left: rem(3);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      ul {
+        .carousel__slide--hidden {
+          opacity: 0.5;
+        }
+
+        li {
+          & > div {
+            margin-left: 15%;
+          }
+        }
+      }
+    }
+
+    &-slide {
+      .featured-posts__post {
+        display: flex;
+        flex-direction: column;
+
+        &--placeholder {
+          display: none;
+
+          @include media(">=md") {
+            display: flex;
+          }
+        }
+
+        h3, h4 {
+          align-self: flex-start;
+        }
+      }
+
+      &--hidden {
+        opacity: 0.5;
+      }
+    }
+
+    &-dots {
+      display: flex;
+      justify-content: center;
+  
+      button {
+        height: rem(12);
+        width: rem(12);
+        border-radius: rem(8);
+        margin-left: 0.2rem;
+        background-color: $white;
+        fill: $brand-pink;
+        border: none;
+        opacity: 0.7;
+  
+        &:disabled {
+          opacity: 1;
+          height: rem(20);
+          width: rem(20);
+        }
+      }
+    }
+  }
+
+  .featured-posts__load-more {
+    display: none;
+
+    @include media(">=md") {
+      display: flex;
+    }
+
+    button {
+      font-size: rem(18);
+    }
+  }
+}

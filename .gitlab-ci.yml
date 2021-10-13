@@ -1,0 +1,174 @@
+image: node:14-alpine
+
+stages:
+  - build
+  - package
+  - test
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+  VERSION_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+
+next:
+  stage: build
+  only:
+    - merge_requests
+    - master
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+      - .next
+  artifacts:
+    paths:
+      - node_modules
+      - .next
+  script:
+    - yarn
+    - NEXT_PUBLIC_STORYBLOK_API_TOKEN=${DEV_STORYBLOK_TOKEN} yarn build
+
+storybook:
+  stage: build
+  only:
+    - merge_requests
+    - master
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+  artifacts:
+    paths:
+      - storybook-static
+  script:
+    - yarn
+    - yarn build-storybook
+
+build-container:
+  stage: package
+  only:
+    - merge_requests
+    - master
+  image: registry.gitlab.com/atomix/docker-gcloud-builder:latest
+  services:
+    - docker:18.09.7-dind
+  needs:
+    - job: next
+      artifacts: true
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker pull $RELEASE_IMAGE || true
+    - docker build -f Dockerfile.ci --cache-from $RELEASE_IMAGE -t $VERSION_IMAGE --build-arg STORYBLOK_API_TOKEN="${DEV_STORYBLOK_TOKEN}" .
+    - docker push $VERSION_IMAGE
+
+lighthouse:
+  stage: test
+  image: cypress/browsers:node12.18.3-chrome87-ff82
+  services:
+    - $VERSION_IMAGE
+  only:
+    - merge_requests
+    - master
+  needs:
+    - job: build-container
+      artifacts: false
+  allow_failure: true
+  script:
+    - yarn global add @lhci/cli
+    - lhci autorun
+
+lint-all:
+  stage: test
+  only:
+    - master
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+  needs: []
+  allow_failure: true
+  script:
+    - yarn
+    - yarn lint
+
+lint-branch:
+  stage: test
+  only:
+    - merge_requests
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+  needs: []
+  allow_failure: true
+  script:
+    - apk add --no-cache git
+    - git fetch
+    - yarn
+    - yarn eslint --no-error-on-unmatched-pattern $(git diff origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME...origin/$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME --name-only -- '*.ts' '*.tsx' '*.js' '*.jsx'),
+
+tsc:
+  stage: test
+  only:
+    - merge_requests
+    - master
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+  needs: []
+  allow_failure: true
+  script:
+    - yarn
+    - yarn type-check
+
+chromatic:
+  stage: deploy
+  only:
+    - merge_requests
+    - master
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_JOB_NAME
+    paths:
+      - node_modules
+  needs:
+    - job: storybook
+      artifacts: true
+  script:
+    - apk add --no-cache git
+    - yarn
+    - npx chromatic --project-token=fc73838bb714 -d storybook-static --exit-zero-on-changes --allow-console-errors
+
+deploy:
+  stage: deploy
+  image: docker:stable
+  environment:
+    name: staging
+    url: https://atomix.k8s.atomix.dev
+    kubernetes:
+      namespace: atomix
+  services:
+    - docker:18.09.7-dind
+  script:
+    - apk add --no-cache curl bash openssl python3
+    - curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-331.0.0-linux-x86_64.tar.gz
+    - tar xzf google-cloud-sdk-331.0.0-linux-x86_64.tar.gz
+    - export PATH="${PATH}:${PWD}/google-cloud-sdk/bin"
+    - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker pull $VERSION_IMAGE
+    - docker tag $VERSION_IMAGE $RELEASE_IMAGE
+    - docker push $RELEASE_IMAGE
+    - gcloud auth activate-service-account --key-file "${DEV_GCLOUD_SERVICE_ACCOUNT_KEY}"
+    - gcloud container clusters get-credentials dev-cluster --zone australia-southeast1-a --project cluster-dev-294103
+    - helm upgrade --install --wait --namespace=atomix
+        --set image.tag=$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+        --set gitlab.app=$CI_PROJECT_PATH_SLUG
+        --set gitlab.env=$CI_ENVIRONMENT_SLUG
+        next-public-website ./helm/charts/next-public-website
+  needs:
+    - job: build-container
+  only:
+    - master
+

@@ -1,0 +1,31 @@
+@import "~include-media/dist/include-media";
+@import 'variables';
+@import 'colors';
+@import 'mixins';
+
+.article {
+  color: $primary;
+  margin: auto;
+  margin-bottom: rem($baseline * 2);
+  margin-top: rem($baseline * 2);
+  padding: $container-padding;
+
+  @include media(">=lg") {
+    width: 960px;
+  }
+
+  @include media(">=lg") {
+    width: 1024px;
+  }
+
+  &__heading {
+    font-size: rem($baseline * 3.5);
+    margin-bottom: rem($baseline * 4);
+  }
+
+  &__content {
+    line-height: rem($baseline * 3);
+    overflow: auto;
+    padding: rem($baseline * 3) 0;
+  }
+}

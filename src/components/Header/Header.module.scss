@@ -1,0 +1,28 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/variables';
+@import '../../styles/colors';
+@import "../../styles/functions";
+
+.header {
+  color: $primary;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: rem(80);
+  margin-top: rem(20);
+  padding: 0 rem(20);
+
+  @include media(">=md") {
+    margin-top: rem(40);
+    padding: 0 rem(80);
+  }
+
+  @include media(">=lg") {
+    margin-top: rem(90);
+    padding: 0 rem(80);
+  }
+
+  @include media(">=xl") {
+    margin-bottom: rem(120);
+    padding: 0 rem(120);
+  }
+}

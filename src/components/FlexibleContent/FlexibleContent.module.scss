@@ -1,0 +1,74 @@
+@import "../../styles/common";
+@import "~include-media/dist/include-media";
+
+$flexible-content-row-gap: 1rem !default;
+
+.root {
+  flex-direction: column;
+}
+
+.row {
+  //
+}
+
+.column {
+
+  // A column-row is a column that has collapsed under another column, which means we need to treat it kinda like a row
+  &--row {
+    margin-top: $flexible-content-row-gap;
+  }
+}
+
+.container {
+  //
+}
+
+.outer {
+  & + & {
+    margin-top: $flexible-content-row-gap;
+  }
+}
+
+$sides: ['left', 'right'];
+$cols: [1, 2];
+$overflowBreakpoints: ['lg', 'xl'];
+
+// It's best not to think too much about this, but this is what allows rows to overflow the grid without going outside
+// the boundary of the browser window.
+.overflow {
+  @each $bp in $overflowBreakpoints {
+    @include media(">=#{$bp}") {
+      @each $side in $sides {
+        &--#{$side} {
+          @each $col in $cols {
+            &--#{$col}-col {
+              $width: #{rem(map-get($container-max-width, lg) / 12 * $col)};
+              $used-space: map-get($container-max-width, $bp);
+              $available-negative-space: calc((100vw - #{rem($used-space)}) * -1 / 2);
+
+              margin-#{$side}: clamp(#{rem(-$width)}, #{$available-negative-space}, 0px);
+              width: calc(100% + #{rem($grid-gutter-width)} + #{rem($width)});
+              max-width: calc(100% + #{rem($grid-gutter-width)} + #{rem($width)});
+
+              @each $otherside in $sides {
+                @if $otherside != $side {
+                  @each $col in $cols {
+                    &.overflow--#{$otherside}--#{$col}-col {
+                      @include media(">=lg") {
+                        $otherwidth: $width;
+                        $thiswidth: #{map-get($container-max-width, lg) / 12 * $col};
+
+                        width: calc(100% + #{rem($grid-gutter-width)} + #{rem($otherwidth)} + #{rem($thiswidth)});
+                        max-width: calc(100% + #{rem($grid-gutter-width)} + #{rem($otherwidth)} + #{rem($thiswidth)});
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

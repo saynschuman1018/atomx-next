@@ -1,0 +1,52 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/common';
+
+.wrapper {
+  margin-bottom: rem(30);
+  height: rem(800);
+  overflow: hidden;
+  position: relative;
+
+  /* @include media(">=sm") {
+    height: rem(1200);
+  }
+
+  @include media(">=md") {
+    height: rem(800);
+  } */
+
+  @include media(">=xl") {
+    height: 50vw;
+  }
+}
+
+.teamCard {
+  grid-template-columns: 1fr;
+  height: 100%;
+  padding: rem(30);
+
+  @include media(">=md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.teamCard-panel {
+  @media (orientation: portrait) {
+    align-self: flex-end;
+  }
+  grid-column: 2;
+
+  @include media(">=md") {
+    align-self: center;
+  }
+
+  &__heading * {
+    font-family: $headerFont;
+    font-size: rem(45);
+    line-height: rem(60);
+  }
+
+  &__link {
+    line-height: rem(40);
+  }
+}

@@ -1,0 +1,8 @@
+@import "../../styles/common";
+
+.column {
+  display: block;
+  max-width: 100%;
+
+  @include remove-last-child-margins;
+}

@@ -1,0 +1,88 @@
+@import "~include-media/dist/include-media";
+@import '../../../styles/common';
+
+.facegallery-cta {
+  display: inline-block;
+  font-size: rem(16);
+  height: rem(64);
+  margin-right: rem(100);
+  margin-top: rem(16);
+  position: relative;
+
+  @include media(">=md") {
+    font-size: rem(26);
+  }
+
+  &__heading {
+    cursor: pointer;
+    font-family: $headerFont;
+    max-width: rem(129);
+
+    @include media(">=md") {
+      max-width: rem(209);
+    }
+
+    &:hover {
+      .facegallery-cta__link {
+        color: $primary-lightblue;
+      }
+
+      .facegallery-cta__underline {
+        path {
+          animation: hoverColor 0.4s linear forwards;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    color: rgb(102,102,102);
+    display: flex;
+    flex-direction: column;
+    font-family: $toolTipFont;
+    max-width: rem(129);
+    position: absolute;
+    transform: rotate(-0.45rad) translate(#{rem(130)}, #{rem(2)});
+
+    @include media(">=md") {
+      max-width: rem(233);
+      transform: rotate(-0.45rad) translateX(#{rem(182)});
+    }
+  }
+
+  &__image {
+    align-self: center;
+    fill: $brand-pink;
+    margin: auto;
+    transform: rotate(0.75rad) translate(-#{rem(14.5)}, #{rem(17.5)});
+    width: rem(42);
+  }
+
+  &__link {
+    color: $primary;
+    display: inline-block;
+    line-height: rem(22);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+
+    @include media(">=md") {
+      line-height: rem(35);
+    }
+  }
+
+  &__underline {
+    transform: translateY(-#{rem(10)});
+
+    path {
+      fill: $brand-pink;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+  }
+}
+
+@keyframes hoverColor {
+  100% {
+    fill: $brand-blue;
+  }
+}

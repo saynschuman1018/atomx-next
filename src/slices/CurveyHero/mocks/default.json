@@ -1,0 +1,39 @@
+{
+  "heading": "This is the title",
+  "height": 500,
+  "content": {
+    "type": "paragraph",
+    "content" : [ {"text": "Ut officia occaecat laborum quis eiusmod id nulla occaecat sit qui irure dolore.\r\nExercitation excepteur labore ad ex labore ex nostrud non quis irure velit nostrud sit nulla tempor. Labore enim consectetur laboris occaecat non reprehenderit sit consequat voluptate est proident. Ad commodo velit exercitation deserunt eu fugiat id nulla Lorem tempor proident aliqua nisi."}]
+  },
+  "background": {
+    "filename": "https://a.storyblok.com/f/101327/3900x2600/1ccab00141/jungle-office.jpg"
+  },
+  "top_curve": {
+    "start": {
+      "x": "100",
+      "y": "0"
+    },
+    "control": {
+      "x": "61.8",
+      "y": "40"
+    },
+    "end": {
+      "x": "0",
+      "y": "35"
+    }
+  },
+  "bottom_curve": {
+    "start": {
+      "x": "100",
+      "y": "61.8"
+    },
+    "control": {
+      "x": "40",
+      "y": "60"
+    },
+    "end": {
+      "x": "0",
+      "y": "100"
+    }
+  }
+}

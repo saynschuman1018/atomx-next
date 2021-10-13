@@ -1,0 +1,107 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "FaceGallery",
+    "frames": [
+      {
+        "_uid": "017195bc-abf1-46d1-b051-fddef21ab211",
+        "seed": "3",
+        "media": {
+          "id": 1792031,
+          "alt": "",
+          "name": "",
+          "focus": null,
+          "title": "",
+          "filename": "https://a.storyblok.com/f/101327/800x800/1084213303/andrew_v1-1.jpg",
+          "copyright": "",
+          "fieldtype": "asset"
+        },
+        "heading": "Andrew",
+        "component": "face_gallery_frame",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Lorem Ipsum.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "_editable": "<!--#storyblok#{\"name\": \"face_gallery_frame\", \"space\": \"101327\", \"uid\": \"017195bc-abf1-46d1-b051-fddef21ab211\", \"id\": \"33121986\"}-->"
+      },
+      {
+        "_uid": "a41c5e89-b4c6-4d9d-9028-3b6a2344eb60",
+        "seed": "",
+        "media": {
+          "id": 1792053,
+          "alt": "",
+          "name": "",
+          "focus": null,
+          "title": "",
+          "filename": "https://a.storyblok.com/f/101327/800x800/3715b0bde6/jack_1.jpg",
+          "copyright": "",
+          "fieldtype": "asset"
+        },
+        "heading": "Jack",
+        "component": "face_gallery_frame",
+        "description": "",
+        "_editable": "<!--#storyblok#{\"name\": \"face_gallery_frame\", \"space\": \"101327\", \"uid\": \"a41c5e89-b4c6-4d9d-9028-3b6a2344eb60\", \"id\": \"33121986\"}-->"
+      },
+      {
+        "_uid": "e0d0662b-8242-4d5c-bb4f-c54d859535ee",
+        "seed": "14",
+        "media": {
+          "id": 1792061,
+          "alt": "",
+          "name": "",
+          "focus": null,
+          "title": "",
+          "filename": "https://a.storyblok.com/f/101327/600x600/0ef7a0bee3/josh.jpg",
+          "copyright": "",
+          "fieldtype": "asset"
+        },
+        "heading": "Josh",
+        "component": "face_gallery_frame",
+        "description": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Description here.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "_editable": "<!--#storyblok#{\"name\": \"face_gallery_frame\", \"space\": \"101327\", \"uid\": \"e0d0662b-8242-4d5c-bb4f-c54d859535ee\", \"id\": \"33121986\"}-->"
+      }
+    ],
+    "content": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec pretium vulputate sapien nec sagittis aliquam. Cras pulvinar mattis nunc sed blandit libero volutpat sed. Nisi vitae suscipit ",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "heading": "Meet the Team",
+    "slice_type": "face_gallery"
+  }
+]

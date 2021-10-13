@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ include "next-public-website.fullname" . }}-ingress-cert
+  namespace: istio-system
+  {{- if .Values.gitlab.enabled }}
+  annotations:
+    {{- include "next-public-website.gitlab-annotations" . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "next-public-website.labels" . | nindent 4 }}
+spec:
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  secretName: {{ include "next-public-website.fullname" . }}-ingress-cert
+  commonName: {{ .Values.ingress.host | quote }}
+  dnsNames:
+    - {{ .Values.ingress.host | quote }}

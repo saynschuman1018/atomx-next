@@ -1,0 +1,94 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/variables';
+@import "../../styles/colors";
+@import "../../styles/functions";
+
+.logo {
+  height: rem(23);
+  min-height: auto;
+
+  @include media(">=md") {
+    height: rem(45);
+  }
+
+  &__path {
+    animation: paintLogo 1.1s linear forwards;
+    fill: none;
+    stroke: $primary;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+
+    &--blue {
+      animation: paintDot 1.3s linear forwards;
+      stroke: $primary-lightblue;
+    }
+  }
+
+  &__button {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &.inverse {
+    background: #0f1822;
+
+    .logo {
+      &__path {
+        animation: paintInverseLogo 1.1s linear forwards;
+        fill: none;
+        stroke: $white;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+
+        &--blue {
+          animation: paintDot 1.3s linear forwards;
+          stroke: $primary-lightblue;
+        }
+      }
+    }
+  }
+}
+
+@keyframes paintLogo {
+  50% {
+    fill: rgba($primary, 0);
+    stroke: rgba($primary, 1);
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: rgba($primary, 1);
+    stroke: rgba($primary, 0);
+  }
+}
+
+@keyframes paintInverseLogo {
+  50% {
+    fill: rgba($white, 0);
+    stroke: rgba($white, 1);
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: rgba($white, 1);
+    stroke: rgba($white, 0);
+  }
+}
+
+@keyframes paintDot {
+  50% {
+    fill: rgba($primary-lightblue, 0);
+    stroke: rgba($primary-lightblue, 1);
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: rgba($primary-lightblue, 1);
+    stroke: rgba($primary-lightblue, 0);
+  }
+}

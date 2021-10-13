@@ -1,0 +1,225 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/functions';
+
+.list-item {
+  background-color: transparent;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  margin-bottom: rem(8);
+  
+  p {
+    margin-bottom: 0;
+  }
+
+  &__icon-wrapper {
+    flex: 1;
+    text-align: center;
+    max-width: rem(24);
+    min-width: rem(24);
+    max-height: rem(24);
+    min-height: rem(24);
+
+    display: flex;
+    justify-content: center;
+    position:relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 80%;
+    margin: 10% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--red {
+      fill: $secondary-red;
+    }
+
+    &--yellow {
+      fill: $secondary-yellow;
+    }
+
+    &--orange {
+      fill: $secondary-orange;
+    }
+
+    &--purple {
+      fill: $secondary-purple;
+    }
+
+    &--green {
+      fill: $secondary-green;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-left: rem(12);
+    font-weight: 300;
+    color: $secondary-lightgrey;
+    
+    > * {
+      font-weight: 300;
+      color: $secondary-lightgrey;
+    }
+    
+    &--link {
+
+      a {        
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-position: under;
+        transition: all .2s ease-in-out;
+      }
+      
+      &-red:hover a {
+        text-decoration-color: $secondary-red;
+      }
+
+      &-yellow:hover a {
+        text-decoration-color: $secondary-yellow;
+      }
+
+      &-orange:hover a {
+        text-decoration-color: $secondary-orange;
+      }
+
+      &-purple:hover a {
+        text-decoration-color: $secondary-purple;
+      }
+
+      &-green:hover a {
+        text-decoration-color: $secondary-green;
+      }
+    }
+  }
+}
+
+.list-item-button {
+  background-color: transparent;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &__icon-wrapper {
+    flex: 1;
+    text-align: center;
+    min-width: rem(80);
+    max-width: rem(80);
+    display: flex;
+    justify-content: center;
+    position:relative;
+  }
+
+  &__icon {
+    flex: 1;
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 40%;
+    margin: 30% 30%;
+    display: flex;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+    fill: $secondary-darkgrey2;
+  }
+
+  &__circle {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    fill: #F4F4F4;
+    transition: all .2s ease-in-out;
+  }
+
+  &__content {
+    display: flex;
+    margin-left: rem(8);
+    font-weight: 300;
+    color: $primary;
+    transition: all .2s ease-in-out;
+
+    p {
+      margin-bottom: 0;
+      font-weight: 300;
+      color: $primary;
+    }
+
+    &--link {
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-position: under;
+
+      a {
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+}
+
+.list-item-button--link:hover {
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  .list-item-button__icon--link {
+    fill: #F4F4F4;
+  }
+
+  .list-item-button__circle--link-red {
+    fill: $secondary-red;
+  }
+
+  .list-item-button__circle--link-yellow {
+    fill: $secondary-yellow;
+  }
+
+  .list-item-button__circle--link-orange {
+    fill: $secondary-orange;
+  }
+
+  .list-item-button__circle--link-purple {
+    fill: $secondary-purple;
+  }
+
+  .list-item-button__circle--link-green {
+    fill: $secondary-green;
+  }
+
+  .list-item-button__content--link {
+    &-red a {
+      text-decoration-color: $secondary-red;
+    }
+
+    &-yellow a {
+      text-decoration-color: $secondary-yellow;
+    }
+
+    &-orange a {
+      text-decoration-color: $secondary-orange;
+    }
+
+    &-purple a {
+      text-decoration-color: $secondary-purple;
+    }
+
+    &-green a {
+      text-decoration-color: $secondary-green;
+    }
+  }
+}

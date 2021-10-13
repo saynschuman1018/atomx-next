@@ -1,0 +1,51 @@
+@mixin unreset-list {
+  li ul, li ol {
+    margin:0 1.5em;
+  }
+  ul, ol {
+    margin:0 1.5em 1.5em 1.5em;
+  }
+  ul {
+    list-style-type:disc;
+  }
+  ol {
+    list-style-type:decimal;
+  }
+  ol ol {
+    list-style: upper-alpha;
+  }
+  ol ol ol {
+    list-style: lower-roman;
+  }
+  ol ol ol ol {
+    list-style: lower-alpha;
+  }
+  dl {
+    margin:0 0 1.5em 0;
+  }
+  dl dt {
+    font-weight:bold;
+  }
+  dd {
+    margin-left:1.5em;
+  }
+}
+
+@mixin remove-last-child-margins {
+  p, img, figure {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin chunky-underline($color, $block: false, $size: 20%, $position: 0%) {
+  background-image: linear-gradient(
+    transparent 0%, 
+    transparent (100% - $size - $position), 
+    $color  (100% - $size - $position), 
+    $color (100% - $position), 
+    transparent (100% - $position), 
+    transparent
+  );
+}

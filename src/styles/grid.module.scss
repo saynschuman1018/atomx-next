@@ -1,0 +1,24 @@
+@import "~include-media/dist/include-media";
+@import 'variables';
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-evenly;
+
+  @include media('>=sm') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--three-columns {
+    @include media('>=md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--four-columns {
+    @include media('>=md') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

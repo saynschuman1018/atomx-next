@@ -1,0 +1,35 @@
+@use "sass:map";
+
+@import "~include-media/dist/include-media";
+@import 'common';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.container {
+  margin: auto;
+  display: block;
+  padding-left: rem(20);
+  padding-right: rem(20);
+  min-width: map-get($breakpoints, "xxs");
+
+  @include media(">=xl") {
+    padding: 0;
+  }
+
+  @each $breakpoint, $width in $container-max-width {
+    @include media(">=#{$breakpoint}") {
+      max-width: rem($width);
+    }
+  }
+}

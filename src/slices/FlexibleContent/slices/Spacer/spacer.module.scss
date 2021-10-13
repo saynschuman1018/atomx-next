@@ -1,0 +1,65 @@
+@import "~include-media/dist/include-media";
+@import '../../../../styles/common';
+
+$spacer-breakpoints: (
+  xs: 20px,
+  sm: 40px,
+  md: 80px,
+  lg: 120px,
+  xl: 180px,
+);
+
+$spacer-breakpoints-small: (
+  xs: 10px,
+  sm: 20px,
+  md: 40px,
+  lg: 60px,
+  xl: 90px,
+);
+
+.spacer {
+  width: 100%;
+
+  @each $breakpoint, $size in $spacer-breakpoints {
+    @include media(">=#{$breakpoint}") {
+      height: calc(#{rem($size)} - 2rem);
+    }
+  }
+
+  &--small {
+    @each $breakpoint, $size in $spacer-breakpoints-small {
+      @include media(">=#{$breakpoint}") {
+        height: calc(#{rem($size)} - 1rem);
+      }
+    }
+  }
+
+  &--empty {
+    //
+  }
+
+  &--hr {
+    //
+  }
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #dadada;
+
+  @each $breakpoint, $size in $spacer-breakpoints {
+    @include media(">=#{$breakpoint}") {
+      margin-top: calc(#{rem(#{$size / 2})} - 1rem);
+      margin-bottom: calc(#{rem(#{$size / 2})} - 1rem);
+    }
+  }
+
+  &--small {
+    @each $breakpoint, $size in $spacer-breakpoints-small {
+      @include media(">=#{$breakpoint}") {
+        margin-top: calc(#{rem(#{$size / 2})} - 0.5rem);
+        margin-bottom: calc(#{rem(#{$size / 2})} - 0.5rem);
+      }
+    }
+  }
+}

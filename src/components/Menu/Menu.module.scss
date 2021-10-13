@@ -1,0 +1,63 @@
+@import "~include-media/dist/include-media";
+@import '../../styles/variables';
+@import "../../styles/colors";
+@import "../../styles/functions";
+
+.title,
+.nav {
+  align-items: center;
+  display: flex;
+
+  &__menu {
+    display: none;
+    flex: 1;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding-left: 0;
+
+    @include media('>=lg') {
+      display: flex;
+    }
+
+    > li {
+      a {
+        margin: auto rem(30);
+        
+        @include media('>=xl') {
+          margin: auto rem(45);
+        }
+      }
+
+      &:last-child {
+        a {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $primary;
+    margin: auto rem(30);
+    text-decoration: none;
+    font-size: rem(22);
+    line-height: rem(28);
+    transition: color 0.15s ease-in-out;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-lightblue;
+    }
+
+    &.selected {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    @include media('>=xl') {
+      margin: auto rem(45);
+    }
+  }
+}
